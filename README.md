@@ -1,41 +1,36 @@
-# 🗣️ voice_agent — Local Voice Assistant That Works Offline
+# 🎙️ Voice Agent PWA
 
--> A browser-based voice assistant powered by local speech-to-text, OpenAI, and text-to-speech. Built using Next.js, TypeScript, Whisper WASM, and Coqui TTS.
+A hands-free voice assistant built with Next.js that lets you talk to AI and get spoken responses back. Just click, speak, and listen!
 
----
+## ✨ What It Does
 
-🚀 What This Project Does
+- 🎤 **Voice Input**: Click "Start Recording" and speak naturally
+- 🤖 **AI Chat**: Powered by Google Gemini for smart conversations  
+- 🔊 **Voice Output**: AI speaks back to you automatically
+- ⚡ **Fast Response**: Targets sub-1200ms total response time
+- 📱 **PWA Ready**: Works on desktop and mobile, installable
 
-This is an intelligent voice assistant that runs in your browser, even without an internet connection (except for the OpenAI part). Here's how it works:
+## 🚀 Try It Live
 
-1. You talk to it using your mic.
-2. It transcribes your voice locally using Whisper WASM.
-3. Once you stop speaking, it sends the text to OpenAI's ChatGPT to figure out a reply.
-4. Then, it converts the response back to audio (TTS) using a local voice model (no need to fetch from Google or Amazon).
-5. You hear the voice reply — like magic, but nerdy magic.
+1. Clone this repo
+2. Add your Gemini API key to `.env.local`
+3. Run `npm install && npm run dev`
+4. Open http://localhost:3000
+5. Click "Start Recording" and say "Tell me a joke"!
 
----
+## 🛠️ Tech Stack
 
-🧠 Why It's Cool
+- **Frontend**: Next.js 15, TypeScript, React
+- **AI**: Google Gemini API (free tier!)
+- **Voice**: Browser Speech APIs (SpeechRecognition + SpeechSynthesis)
+- **Performance**: Real-time metrics tracking
+- **Deployment**: Vercel-ready
 
-- 📴 Works offline (everything except OpenAI is local)
-- 🧠 Smart replies powered by OpenAI's LLM
-- 🗣️ Fast local speech-to-text using `whisper.cpp`
-- 🔊 Real-time voice replies using local TTS
-- 🛠️ Built with TypeScript + Next.js (PWA)
+## ⚙️ Setup
 
----
+### Get Your Free Gemini API Key
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in and create a new API key
+3. Copy it to your `.env.local` file
 
-📦 Features Breakdown
-
-| Feature       | How it works                                          |
-|---------------|--------------------------------------------------------|
-| 🎤 Voice Input  | Uses browser mic and records short chunks            |
-| 🧾 Transcription | Uses `whisper.cpp` compiled to WebAssembly in a Web Worker |
-| 💬 AI Reply     | Sends transcript to OpenAI's Chat Completion API     |
-| 🔊 Voice Output | Uses Coqui TTS model locally (also in Web Worker)    |
-| 📶 Offline Ready| Uses service worker to precache WASM and TTS models  |
-| ⏱️ Performance  | Logs latency for STT, API, TTS, and audio playback   |
-
----
-
+### Install & Run
