@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗣️ voice_agent — Local Voice Assistant That Works Offline
 
-## Getting Started
+-> A browser-based voice assistant powered by local speech-to-text, OpenAI, and text-to-speech. Built using Next.js, TypeScript, Whisper WASM, and Coqui TTS.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🚀 What This Project Does
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is an intelligent voice assistant that runs in your browser, even without an internet connection (except for the OpenAI part). Here's how it works:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. You talk to it using your mic.
+2. It transcribes your voice locally using Whisper WASM.
+3. Once you stop speaking, it sends the text to OpenAI's ChatGPT to figure out a reply.
+4. Then, it converts the response back to audio (TTS) using a local voice model (no need to fetch from Google or Amazon).
+5. You hear the voice reply — like magic, but nerdy magic.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+🧠 Why It's Cool
 
-To learn more about Next.js, take a look at the following resources:
+- 📴 Works offline (everything except OpenAI is local)
+- 🧠 Smart replies powered by OpenAI's LLM
+- 🗣️ Fast local speech-to-text using `whisper.cpp`
+- 🔊 Real-time voice replies using local TTS
+- 🛠️ Built with TypeScript + Next.js (PWA)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📦 Features Breakdown
 
-## Deploy on Vercel
+| Feature       | How it works                                          |
+|---------------|--------------------------------------------------------|
+| 🎤 Voice Input  | Uses browser mic and records short chunks            |
+| 🧾 Transcription | Uses `whisper.cpp` compiled to WebAssembly in a Web Worker |
+| 💬 AI Reply     | Sends transcript to OpenAI's Chat Completion API     |
+| 🔊 Voice Output | Uses Coqui TTS model locally (also in Web Worker)    |
+| 📶 Offline Ready| Uses service worker to precache WASM and TTS models  |
+| ⏱️ Performance  | Logs latency for STT, API, TTS, and audio playback   |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
