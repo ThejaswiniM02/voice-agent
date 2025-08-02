@@ -34,3 +34,6 @@ A hands-free voice assistant built with Next.js that lets you talk to AI and get
 3. Copy it to your `.env.local` file
 
 ### Install & Run
+git clone https://github.com/YOUR_USERNAME/voice-agent.git
+cd voice-agent
+npm install
