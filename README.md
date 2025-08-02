@@ -37,3 +37,6 @@ A hands-free voice assistant built with Next.js that lets you talk to AI and get
 git clone https://github.com/YOUR_USERNAME/voice-agent.git
 cd voice-agent
 npm install
+Create .env.local file:
+echo "GEMINI_API_KEY=your_api_key_here" > .env.local
+npm run dev
